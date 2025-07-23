@@ -22,6 +22,21 @@ namespace Jellyfin.Plugin.Simkl.API.Objects
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="SimklMovie"/> class with the specified title, release year, and
+        /// watch date.
+        /// </summary>
+        /// <param name="title">The title of the movie. Can be <see langword="null"/> if the title is unknown.</param>
+        /// <param name="year">The release year of the movie. Can be <see langword="null"/> if the release year is unknown.</param>
+        /// <param name="watchedAt">The date and time when the movie was watched. Can be <see langword="null"/> if the watch date is unknown.</param>
+        [JsonConstructor]
+        public SimklMovie(string? title, int? year, DateTime? watchedAt)
+        {
+            Title = title;
+            Year = year;
+            WatchedAt = watchedAt;
+        }
+
+        /// <summary>
         /// Gets or sets the movie title.
         /// </summary>
         [JsonPropertyName("title")]

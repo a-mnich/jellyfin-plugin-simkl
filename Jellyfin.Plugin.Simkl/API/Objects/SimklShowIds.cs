@@ -18,6 +18,22 @@ namespace Jellyfin.Plugin.Simkl.API.Objects
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="SimklShowIds"/> class with the specified external service
+        /// identifiers.
+        /// </summary>
+        /// <param name="mal">The MyAnimeList (MAL) identifier for the show. Can be <see langword="null"/> if not applicable.</param>
+        /// <param name="hulu">The Hulu identifier for the show. Can be <see langword="null"/> if not applicable.</param>
+        /// <param name="crunchyroll">The Crunchyroll identifier for the show. Can be <see langword="null"/> if not applicable.</param>
+        /// <param name="zap2It">The Zap2It identifier for the show. Can be <see langword="null"/> if not applicable.</param>
+        public SimklShowIds(int? mal, int? hulu, int? crunchyroll, string? zap2It)
+        {
+            Mal = mal;
+            Hulu = hulu;
+            Crunchyroll = crunchyroll;
+            Zap2It = zap2It;
+        }
+
+        /// <summary>
         /// Gets or sets mal.
         /// </summary>
         [JsonPropertyName("mal")]

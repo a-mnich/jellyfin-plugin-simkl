@@ -18,6 +18,23 @@ namespace Jellyfin.Plugin.Simkl.API.Objects
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="SimklMovieIds"/> class with the specified external service
+        /// identifiers.
+        /// </summary>
+        /// <param name="mal">The MyAnimeList (MAL) identifier for the movie. Can be <see langword="null"/> if not applicable.</param>
+        /// <param name="hulu">The Hulu identifier for the movie. Can be <see langword="null"/> if not applicable.</param>
+        /// <param name="crunchyroll">The Crunchyroll identifier for the movie. Can be <see langword="null"/> if not applicable.</param>
+        /// <param name="moviedb">The Movie Database (TMDb) identifier for the movie. Can be <see langword="null"/> if not applicable.</param>
+        [JsonConstructor]
+        public SimklMovieIds(int? mal, int? hulu, int? crunchyroll, string? moviedb)
+        {
+            Mal = mal;
+            Hulu = hulu;
+            Crunchyroll = crunchyroll;
+            Moviedb = moviedb;
+        }
+
+        /// <summary>
         /// Gets or sets the mal id.
         /// </summary>
         [JsonPropertyName("mal")]

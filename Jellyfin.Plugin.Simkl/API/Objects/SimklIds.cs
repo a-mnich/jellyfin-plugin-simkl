@@ -50,6 +50,35 @@ namespace Jellyfin.Plugin.Simkl.API.Objects
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="SimklIds"/> class with the specified identifiers.
+        /// </summary>
+        /// <param name="simkl">The unique Simkl identifier. Can be <see langword="null"/> if not available.</param>
+        /// <param name="imdb">The IMDb identifier for the item. Can be <see langword="null"/> if not available.</param>
+        /// <param name="slug">The Simkl slug for the item. Can be <see langword="null"/> if not available.</param>
+        /// <param name="netflix">The Netflix identifier for the item. Can be <see langword="null"/> if not available.</param>
+        /// <param name="tmdb">The TMDb (The Movie Database) identifier for the item. Can be <see langword="null"/> if not available.</param>
+        /// <param name="tvdb">The TVDb (TheTVDB.com) identifier for the item. Can be <see langword="null"/> if not available.</param>
+        /// <param name="anidb">The AniDB (Anime Database) identifier for the item. Can be <see langword="null"/> if not available.</param>
+        [JsonConstructor]
+        public SimklIds(int? simkl, string? imdb, string? slug, string? netflix, string? tmdb, string? tvdb, int? anidb)
+        {
+            Simkl = simkl;
+            Imdb = imdb;
+            Slug = slug;
+            Netflix = netflix;
+            Tmdb = tmdb;
+            Tvdb = tvdb;
+            Anidb = anidb;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimklIds"/> class.
+        /// </summary>
+        public SimklIds()
+        {
+        }
+
+        /// <summary>
         /// Gets or sets the simkl id.
         /// </summary>
         [JsonPropertyName("simkl")]

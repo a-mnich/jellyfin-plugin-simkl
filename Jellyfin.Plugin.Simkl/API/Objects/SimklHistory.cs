@@ -21,6 +21,20 @@ namespace Jellyfin.Plugin.Simkl.API.Objects
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="SimklHistory"/> class.
+        /// </summary>
+        /// <param name="movies">A list of movies included in the history. Cannot be null.</param>
+        /// <param name="shows">A list of shows included in the history. Cannot be null.</param>
+        /// <param name="episodes">A list of episodes included in the history. Cannot be null.</param>
+        [JsonConstructor]
+        public SimklHistory(List<SimklMovie> movies, List<SimklShow> shows, List<SimklEpisode> episodes)
+        {
+            Movies = movies;
+            Shows = shows;
+            Episodes = episodes;
+        }
+
+        /// <summary>
         /// Gets or sets list of movies.
         /// </summary>
         [JsonPropertyName("movies")]

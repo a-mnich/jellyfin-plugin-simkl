@@ -35,6 +35,20 @@ namespace Jellyfin.Plugin.Simkl.API.Objects
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="SimklShow"/> class with the specified title, year, and seasons.
+        /// </summary>
+        /// <param name="title">The title of the show. Cannot be null or empty.</param>
+        /// <param name="year">The release year of the show, or <see langword="null"/> if the year is unknown.</param>
+        /// <param name="seasons">A list of seasons associated with the show. Cannot be null, but can be empty if no seasons are available.</param>
+        [JsonConstructor]
+        public SimklShow(string title, int? year, IReadOnlyList<Season>? seasons)
+        {
+            Title = title;
+            Year = year;
+            Seasons = seasons ?? new List<Season>();
+        }
+
+        /// <summary>
         /// Gets or sets title.
         /// </summary>
         [JsonPropertyName("title")]
